@@ -4,6 +4,11 @@ args=("$@")
 name=${args[0]}
 path=$HOME/pythonProjects/$name
 
+if [[ -z "$name" ]]; then
+  echo "createPython <nombre>"
+  exit 0
+fi
+
 if [[ -e "$path" ]]; then
   echo "name already in use"
   exit
